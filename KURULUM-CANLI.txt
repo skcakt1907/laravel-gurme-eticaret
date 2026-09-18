@@ -1,0 +1,140 @@
+===========================================================
+  AEGEA RESERVE  —  CANLIYA ALMA REHBERI
+===========================================================
+Laravel 13 e-ticaret. vendor/ klasoru PAKETE DAHIL,
+yani sunucuda "composer install" calistirmana GEREK YOK.
+
+GEREKSINIM:  PHP 8.2+   (8.3 onerilir)
+             MySQL 5.7+ / MariaDB
+             PHP eklentileri: pdo_mysql, mbstring, openssl,
+                              fileinfo, gd, zip, curl
+
+-----------------------------------------------------------
+1) DOSYALARI YUKLE
+-----------------------------------------------------------
+Zip'i sunucuya ac.
+
+>>> COK ONEMLI — DOCROOT (belge koku) <<<
+Sitenin ana dizini "public" klasoru OLMALI.
+
+  A) cPanel/Plesk'te "Document Root" ayari varsa:
+     domain'in belge kokunu  .../gurme-shop/public  yap.
+
+  B) Ayar yoksa (public_html zorunluysa):
+     - "public" KLASORUNUN ICINDEKILERI public_html'e kopyala
+     - Geri kalan TUM klasorleri (app, vendor, config, storage,
+       database, resources, routes, bootstrap) public_html'in
+       BIR USTUNE koy (guvenlik icin web disinda kalsin)
+     - public_html/index.php dosyasinda su iki satiri duzelt:
+         require __DIR__.'/../vendor/autoload.php';
+         $app = require_once __DIR__.'/../bootstrap/app.php';
+       (../ yerine dogru yolu yaz, ornegin ../gurme-shop/)
+
+-----------------------------------------------------------
+2) .env AYARLA
+-----------------------------------------------------------
+- ".env.canli" dosyasinin adini  ".env"  yap.
+- Icindeki ### isaretli yerleri doldur:
+    APP_URL      -> https://alanadin.com
+    DB_DATABASE / DB_USERNAME / DB_PASSWORD
+    MAIL_* (gercek SMTP; yoksa siparis maili gitmez)
+
+  APP_KEY zaten dolu, DEGISTIRME.
+  APP_DEBUG=false  olarak KALSIN (guvenlik).
+
+-----------------------------------------------------------
+3) VERITABANI
+-----------------------------------------------------------
+Hosting panelinden bos bir MySQL veritabani olustur
+(karakter seti: utf8mb4_unicode_ci), sonra:
+
+  SECENEK A — SQL dosyasi ile  [ONERILEN, SSH gerekmez]
+    Pakette "veritabani.sql" dosyasi HAZIR olarak var.
+      1. phpMyAdmin'i ac
+      2. Soldan kendi (bos) veritabanini SEC
+      3. Ust menuden "Ice Aktar" (Import)
+      4. "veritabani.sql" dosyasini secip Basla'ya bas
+
+    NOT: Dosyada CREATE/USE DATABASE komutu YOKTUR; bu yuzden
+    veritabani adin ne olursa olsun (ornegin "kullanici_aegea")
+    sorunsuz yuklenir. Once bos veritabanini kendin olustur.
+
+    Icerik: 19 tablo + 10 urun, 4 kategori, 16 ayar,
+            6 ozellik karti, 3 blog yazisi, 3 yorum, 1 admin.
+
+  SECENEK B — komut satiri ile (SSH varsa):
+    php artisan migrate --seed
+    (tablolari sifirdan kurar + ayni verileri olusturur)
+
+  >>> Ikisinden SADECE BIRINI yap, ikisini birden yapma. <<<
+
+  Import bittikten sonra "veritabani.sql" dosyasini
+  sunucudan SILEBILIRSIN (icinde admin sifre ozeti var).
+
+-----------------------------------------------------------
+4) IZINLER
+-----------------------------------------------------------
+Su iki klasor YAZILABILIR olmali (genelde 755, bazi
+hostinglerde 775):
+
+    storage/           -> ve tum alt klasorleri
+    bootstrap/cache/
+    public/uploads/    -> urun gorseli yuklemek icin
+
+SSH varsa:
+    chmod -R 775 storage bootstrap/cache public/uploads
+
+-----------------------------------------------------------
+5) SON KONTROL
+-----------------------------------------------------------
+- https://alanadin.com  acilmali (siyah-altin tema)
+- Bir urunu sepete ekle, /odeme sayfasina kadar git
+- https://alanadin.com/yonetim  -> yonetim paneli
+
+  YONETIM GIRISI:
+     admin@ornek-gurme.com
+     admin123
+  >>> GIRDIKTEN SONRA "Profil" bolumunden SIFREYI DEGISTIR <<<
+
+-----------------------------------------------------------
+6) YAYIN SONRASI YAPILACAKLAR (onemli)
+-----------------------------------------------------------
+[ ] Admin sifresini degistir
+[ ] Yonetim > Ayarlar'dan:
+       - Gercek IBAN / hesap adi / banka  (havale odemesi icin!)
+       - Telefon, e-posta, adres
+       - Instagram / Facebook linkleri
+       - Kargo ucreti (her siparise eklenir, sepette gorunur)
+[ ] Gercek urun fotograflarini yukle
+    (su an public/uploads/products/ icindekiler gecici gorsel)
+[ ] Yasal sayfalari avukat/muhasebeci ile kontrol ettir
+    (mesafeli satis, KVKK, gizlilik, iade)
+[ ] SMTP'yi test et: siparis ver, mail geliyor mu bak
+[ ] Kartli odeme istiyorsan iyzico key'lerini .env'ye gir
+    ve Ayarlar'dan "iyzico aktif"i ac
+
+-----------------------------------------------------------
+SORUN GIDERME
+-----------------------------------------------------------
+* Beyaz sayfa / 500 hatasi:
+    storage/logs/laravel.log dosyasina bak.
+    Genelde sebep: izinler ya da yanlis DB bilgisi.
+
+* "500" ve log bos:
+    storage/ klasoru yazilabilir degildir -> chmod 775
+
+* Sayfa acilir ama CSS bozuk / gorseller yok:
+    .env icindeki APP_URL yanlistir (https ve dogru alan adi mi?)
+    Duzeltince:  php artisan optimize:clear
+
+* Ayar degisikligi gozukmuyor:
+    php artisan optimize:clear
+    (SSH yoksa bootstrap/cache/ icindeki .php dosyalarini sil)
+
+* Urun gorseli yuklenmiyor:
+    public/uploads/ yazilabilir degil -> chmod 775
+
+-----------------------------------------------------------
+NOT: Bu pakette "node_modules" ve ".git" YOKTUR (gerekmez).
+     "vendor" DAHILDIR, composer calistirmana gerek yok.
+===========================================================

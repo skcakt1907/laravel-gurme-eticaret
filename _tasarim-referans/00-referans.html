@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AEGEA RESERVE — Referans Şablon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0908;--bg2:#100e0b;--panel:#13100c;--gold:#c9a24a;--gold2:#e7cd86;--cream:#ece3d0;--mut:#8b8578;--line:rgba(201,162,74,.24)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:'Jost',sans-serif;font-weight:300;font-size:16px;line-height:1.75}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+.cin{font-family:'Cinzel',serif}
+.serif{font-family:'Cormorant Garamond',serif}
+.eyebrow{font-family:'Cinzel';letter-spacing:.4em;font-size:11px;color:var(--gold);text-transform:uppercase}
+.gline{width:64px;height:1px;background:var(--gold);margin:16px auto}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Cinzel';font-size:11px;letter-spacing:.24em;padding:15px 32px;border:1px solid var(--gold);color:var(--gold2);background:transparent;transition:.3s;text-transform:uppercase}
+.btn:hover{background:var(--gold);color:var(--bg)}
+.btn.solid{background:var(--gold);color:var(--bg)}
+.btn.solid:hover{background:var(--gold2)}
+/* fish + pack helpers */
+.fi{display:inline-block;color:var(--gold)}
+.fi svg{display:block;width:100%}
+.pack{border:1px solid var(--gold);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(160deg,#171310,#0a0908)}
+.pack::after{content:"";position:absolute;inset:8px;border:1px solid rgba(201,162,74,.4)}
+.pack .pf{width:40px;color:var(--gold)}
+.pack .pn{font-family:'Cinzel';letter-spacing:.2em;color:var(--gold2);font-size:11px}
+.pack .ps{font-family:'Cinzel';letter-spacing:.24em;color:var(--mut);font-size:7px}
+
+/* ===== TOP BAR ===== */
+.topbar{background:#060505;border-bottom:1px solid var(--line);font-family:'Cinzel';font-size:10px;letter-spacing:.18em;color:var(--mut)}
+.topbar .row{display:flex;justify-content:space-between;align-items:center;height:40px}
+.topbar .soc a{margin-right:16px;color:var(--mut)}.topbar .soc a:hover{color:var(--gold2)}
+.topbar .ship{color:var(--gold2)}
+.topbar .links a{margin-left:20px}.topbar .links a:hover{color:var(--gold2)}
+/* ===== NAV ===== */
+.nav{position:sticky;top:0;z-index:40;background:rgba(10,9,8,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .row{display:flex;align-items:center;justify-content:space-between;height:82px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .bfi{width:40px;color:var(--gold)}
+.brand .bt{font-family:'Cinzel';font-weight:500;letter-spacing:.22em;font-size:19px;color:var(--gold2);line-height:1}
+.brand .bs{font-family:'Cinzel';letter-spacing:.34em;font-size:8px;color:var(--mut)}
+.menu{display:flex;gap:32px;font-family:'Cinzel';font-size:12px;letter-spacing:.18em}
+.menu a{color:var(--cream);position:relative;padding:4px 0}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:var(--gold);transform:scaleX(0);transition:.3s}
+.menu a:hover{color:var(--gold2)}.menu a:hover::after{transform:scaleX(1)}
+.navr{display:flex;align-items:center;gap:22px;font-family:'Cinzel';font-size:11px;letter-spacing:.16em;color:var(--mut)}
+.navr .cart{border:1px solid var(--line);padding:9px 16px;border-radius:30px;color:var(--gold2)}
+.navr a:hover{color:var(--gold2)}
+/* ===== HERO ===== */
+.hero{position:relative;background:radial-gradient(ellipse at 78% 20%,#181209,var(--bg) 62%);border-bottom:1px solid var(--line)}
+.hero .row{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:96px 0 90px}
+.hero .k{margin-bottom:24px}
+.hero h1{font-family:'Cinzel';font-weight:500;font-size:clamp(2.4rem,5vw,4.4rem);line-height:1.06;letter-spacing:.02em;background:linear-gradient(180deg,#f6ebc6,#c9a24a 65%,#9c7a2e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .h2{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-size:clamp(1.4rem,2.6vw,2rem);color:var(--cream);margin-top:12px}
+.hero p{max-width:460px;color:#c6bca6;margin:24px 0 34px;font-size:1.05rem}
+.hero .visual{display:flex;align-items:center;justify-content:center}
+.hero .visual .pack{width:74%;max-width:360px;aspect-ratio:4/5}
+.hero .visual .pf{width:66px}.hero .visual .pn{font-size:15px}.hero .visual .ps{font-size:9px}
+.hero .badge{position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);background:#060505;border:1px solid var(--line);border-bottom:none;padding:12px 34px;font-family:'Cinzel';letter-spacing:.34em;font-size:11px;color:var(--gold)}
+/* ===== SECTIONS ===== */
+section{padding:100px 0}
+.sec-head{text-align:center;margin-bottom:64px}
+.sec-head h2{font-family:'Cinzel';font-weight:500;font-size:clamp(1.8rem,3.6vw,2.7rem);letter-spacing:.06em;margin-top:14px;color:var(--cream)}
+.sec-head p{color:var(--mut);margin-top:10px;font-style:italic;font-family:'Cormorant Garamond';font-size:1.2rem}
+/* Our Selection */
+.sel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.sel{border:1px solid var(--line);padding:48px 34px;text-align:center;transition:.35s;background:linear-gradient(180deg,rgba(201,162,74,.03),transparent)}
+.sel:hover{border-color:var(--gold);transform:translateY(-6px)}
+.sel .pack{width:130px;height:164px;margin:0 auto 30px}
+.sel h3{font-family:'Cinzel';font-weight:500;letter-spacing:.05em;font-size:1.2rem;color:var(--cream)}
+.sel p{color:var(--mut);margin:12px 0 22px;min-height:52px}
+.sel a{font-family:'Cinzel';font-size:10px;letter-spacing:.28em;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:5px}
+/* Offers */
+.offers{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.off-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.off{position:relative;border:1px solid var(--line);padding:54px 44px;display:flex;flex-direction:column;justify-content:center;min-height:280px;overflow:hidden;background:radial-gradient(circle at 85% 30%,#1a1408,var(--panel))}
+.off .disc{font-family:'Cinzel';font-size:12px;letter-spacing:.3em;color:var(--gold);margin-bottom:14px}
+.off h3{font-family:'Cormorant Garamond';font-weight:600;font-size:2rem;line-height:1.15;color:var(--cream);max-width:320px}
+.off .btn{margin-top:26px;align-self:flex-start}
+.off .ghost-pack{position:absolute;right:-30px;bottom:-30px;width:180px;height:210px;opacity:.5}
+/* Finest selection products */
+.fin-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px}
+.fin-head h2{font-family:'Cinzel';font-weight:500;font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:.05em}
+.fin-head a{font-family:'Cinzel';font-size:11px;letter-spacing:.2em;color:var(--gold2)}
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.prod{border:1px solid var(--line);transition:.35s;display:flex;flex-direction:column}
+.prod:hover{border-color:var(--gold);transform:translateY(-5px)}
+.prod .ph{aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#161209,#0a0908);border-bottom:1px solid var(--line);position:relative}
+.prod .ph .tagd{position:absolute;top:12px;left:12px;font-family:'Cinzel';font-size:9px;letter-spacing:.16em;color:var(--gold);border:1px solid var(--line);padding:4px 10px;background:rgba(0,0,0,.4)}
+.prod .ph .pack{width:96px;height:120px}
+.prod .pb{padding:22px 20px;text-align:center;display:flex;flex-direction:column;flex:1}
+.prod h4{font-family:'Cormorant Garamond';font-weight:600;font-size:1.2rem;color:var(--cream);line-height:1.25}
+.prod .price{font-family:'Cinzel';color:var(--gold2);font-size:1.15rem;margin:10px 0 16px}
+.prod .add{margin-top:auto;font-family:'Cinzel';font-size:10px;letter-spacing:.24em;color:var(--gold);border:1px solid var(--line);padding:12px;transition:.3s}
+.prod .add:hover{background:var(--gold);color:var(--bg)}
+/* two editorial feature cards */
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.feat{display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center;border:1px solid var(--line);padding:34px;transition:.35s}
+.feat:hover{border-color:var(--gold)}
+.feat .ic{width:150px;height:150px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative}
+.feat .ic::after{content:"";position:absolute;inset:10px;border:1px solid rgba(201,162,74,.4);border-radius:50%}
+.feat .ic .fi{width:56px}
+.feat .e{font-family:'Cinzel';letter-spacing:.24em;font-size:10px;color:var(--gold)}
+.feat h3{font-family:'Cormorant Garamond';font-weight:600;font-size:1.6rem;color:var(--cream);margin:8px 0 14px;line-height:1.2}
+.feat a{font-family:'Cinzel';font-size:10px;letter-spacing:.26em;color:var(--gold2);border-bottom:1px solid var(--gold);padding-bottom:4px}
+/* cure process */
+.cure{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line)}
+.step{padding:44px 28px;text-align:center;border-right:1px solid var(--line)}
+.step:last-child{border-right:none}
+.step .n{font-family:'Cormorant Garamond';font-style:italic;font-size:2.4rem;color:var(--gold)}
+.step h4{font-family:'Cinzel';font-weight:500;letter-spacing:.06em;font-size:1rem;margin:10px 0 8px;color:var(--cream)}
+.step p{color:var(--mut);font-size:14px}
+/* about origin split */
+.origin .row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.origin .frame{aspect-ratio:4/3;border:1px solid var(--line);background:radial-gradient(circle at 40% 40%,#161209,#0a0908);display:flex;align-items:center;justify-content:center}
+.origin .frame .pack{width:46%;aspect-ratio:4/5}
+.origin h2{font-family:'Cinzel';font-weight:500;font-size:2.2rem;letter-spacing:.04em;margin:14px 0 20px}
+.origin p{color:#c1b8a3;margin-bottom:16px}
+/* testimonials */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi{border:1px solid var(--line);padding:38px 32px;background:linear-gradient(180deg,rgba(201,162,74,.03),transparent)}
+.testi .stars{color:var(--gold);letter-spacing:.2em;margin-bottom:16px}
+.testi p{font-family:'Cormorant Garamond';font-style:italic;font-size:1.25rem;color:#d7cbb0;line-height:1.5}
+.testi .who{margin-top:22px;display:flex;align-items:center;gap:14px;border-top:1px solid var(--line);padding-top:20px}
+.testi .who .av{width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Cinzel';font-size:13px}
+.testi .who .nm{font-family:'Cinzel';font-size:12px;letter-spacing:.1em;color:var(--cream)}
+.testi .who .rl{font-size:12px;color:var(--mut)}
+/* newsletter strip */
+.news{text-align:center;background:radial-gradient(ellipse at 50% 0%,#1a1408,var(--bg) 70%)}
+.news h2{font-family:'Cormorant Garamond';font-weight:600;font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--cream)}
+.news p{color:var(--mut);margin:12px 0 28px}
+.news form{display:flex;gap:12px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.news input{flex:1;min-width:220px;background:transparent;border:1px solid var(--line);color:var(--cream);padding:15px 18px;font-family:'Jost';font-size:14px}
+.news input::placeholder{color:var(--mut)}
+/* footer */
+footer{background:#060505;border-top:1px solid var(--line);padding:70px 0 30px}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
+.fcol h5{font-family:'Cinzel';font-size:11px;letter-spacing:.24em;color:var(--gold);margin-bottom:20px;text-transform:uppercase}
+.fcol a,.fcol p{display:block;color:var(--mut);font-size:14px;margin-bottom:10px}
+.fcol a:hover{color:var(--gold2)}
+.fbrand .bt{font-family:'Cinzel';letter-spacing:.22em;font-size:18px;color:var(--gold2)}
+.fbrand .bs{font-family:'Cinzel';letter-spacing:.34em;font-size:8px;color:var(--mut);margin-bottom:16px}
+.fbrand .fi{width:44px;color:var(--gold);margin-bottom:14px}
+.fbot{border-top:1px solid var(--line);margin-top:50px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'Cinzel';font-size:10px;letter-spacing:.2em;color:var(--mut)}
+@media(max-width:960px){.hero .row,.origin .row{grid-template-columns:1fr;gap:44px}.sel-grid,.prod-grid,.testi-grid,.steps{grid-template-columns:1fr 1fr}.feat-grid,.off-grid,.fcols{grid-template-columns:1fr}.step{border-right:none;border-bottom:1px solid var(--line)}.menu,.topbar .links{display:none}}
+@media(max-width:600px){.sel-grid,.prod-grid,.testi-grid,.steps{grid-template-columns:1fr}.wrap{padding:0 22px}.feat{grid-template-columns:1fr;text-align:center}.feat .ic{margin:0 auto}}
+</style>
+</head>
+<body>
+
+<!-- FISH SVG symbol reused -->
+<svg width="0" height="0" style="position:absolute"><symbol id="fish" viewBox="0 0 96 36"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0a0908"/></symbol></svg>
+
+<!-- TOP BAR -->
+<div class="topbar"><div class="wrap row">
+  <div class="soc"><span style="margin-right:14px">FOLLOW US</span><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">YouTube</a></div>
+  <div class="ship">✦ FREE SHIPPING ON ORDERS OVER €100 ✦</div>
+  <div class="links"><a href="#">About</a><a href="#">Our Bottarga</a><a href="#">FAQ</a><a href="#">Contact</a></div>
+</div></div>
+
+<!-- NAV -->
+<div class="nav"><div class="wrap row">
+  <a class="brand" href="#">
+    <span class="bfi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span>
+    <span><span class="bt">AEGEA RESERVE</span><br><span class="bs">BOTTARGA</span></span>
+  </a>
+  <nav class="menu"><a href="#">HOME</a><a href="#">SHOP</a><a href="#">ABOUT</a><a href="#">BLOG</a><a href="#">CONTACT</a></nav>
+  <div class="navr"><a href="#">SEARCH</a><a href="#">EN ▾</a><a class="cart" href="#">CART · 0</a></div>
+</div></div>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap row">
+  <div class="htxt">
+    <div class="k eyebrow">Aegean Selection · Product of Turkey</div>
+    <h1>Wild-Caught.<br>Exceptionally Crafted.</h1>
+    <div class="h2">The Finest Aegean Grey Mullet Bottarga</div>
+    <p>Harvested from the pristine waters of the Aegean Sea, our premium grey-mullet bottarga is a delicacy — hand-cured and sun-dried for the most discerning gourmet palates.</p>
+    <a class="btn solid" href="#">Shop Now →</a>
+  </div>
+  <div class="visual">
+    <div class="pack"><span class="pf fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span><span class="pn">AEGEA RESERVE</span><span class="ps">BOTTARGA · AEGEAN SELECTION</span></div>
+  </div>
+</div>
+  <div class="badge">WILD · HAND-CURED · SUN-DRIED</div>
+</header>
+
+<!-- OUR SELECTION -->
+<section><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Our Selection</span><div class="gline"></div><h2>Choose Your Preferred Bottarga Style</h2></div>
+  <div class="sel-grid">
+    <div class="sel"><div class="pack"><span class="pf fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span><span class="pn">GRATED</span></div><h3>Finely Grated Bottarga</h3><p>Ready-to-use flakes for an instant burst of umami over pasta, eggs or salads.</p><a href="#">SHOP NOW</a></div>
+    <div class="sel"><div class="pack"><span class="pf fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span><span class="pn">WHOLE</span></div><h3>Wax-Sealed Bottarga</h3><p>Traditional whole roe, wax-sealed and preserved for peak freshness. Shave to order.</p><a href="#">SHOP NOW</a></div>
+    <div class="sel"><div class="pack"><span class="pf fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span><span class="pn">PIECES</span></div><h3>Vacuum-Sealed Bottarga</h3><p>Pure, unaltered flavor in an elegant kitchen format — sliceable and versatile.</p><a href="#">SHOP NOW</a></div>
+  </div>
+</div></section>
+
+<!-- EXCLUSIVE OFFERS -->
+<section class="offers"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Exclusive Offers for Gourmets</span><div class="gline"></div><h2>Enjoy Special Prices on Our Finest Bottarga</h2></div>
+  <div class="off-grid">
+    <div class="off"><div class="ghost-pack pack"><span class="pf fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span></div><div class="disc">15% DISCOUNT</div><h3>For Chefs &amp; Fine-Food Retailers</h3><a class="btn" href="#">Contact Us</a></div>
+    <div class="off"><div class="ghost-pack pack"><span class="pf fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span></div><div class="disc">10% DISCOUNT</div><h3>Free Shipping on Select Orders</h3><a class="btn" href="#">Contact Us</a></div>
+  </div>
+</div></section>
+
+<!-- OUR FINEST SELECTION (products) -->
+<section><div class="wrap">
+  <div class="fin-head"><h2>Our Finest Selection of Bottarga</h2><a href="#">All Popular →</a></div>
+  <div class="prod-grid">
+    <div class="prod"><div class="ph"><span class="tagd">GRATED</span><div class="pack"><span class="pf fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span></div></div><div class="pb"><h4>Finely Grated Bottarga – 50g Jar</h4><div class="price">€24,00</div><a class="add" href="#">ADD TO CART</a></div></div>
+    <div class="prod"><div class="ph"><span class="tagd">1 PIECE</span><div class="pack"><span class="pf fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span></div></div><div class="pb"><h4>Wax-Sealed Bottarga – 1 Piece (Large)</h4><div class="price">€68,00</div><a class="add" href="#">ADD TO CART</a></div></div>
+    <div class="prod"><div class="ph"><span class="tagd">PACK OF 5</span><div class="pack"><span class="pf fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span></div></div><div class="pb"><h4>Wax-Sealed Bottarga – Pack of 5</h4><div class="price">€89,00</div><a class="add" href="#">ADD TO CART</a></div></div>
+    <div class="prod"><div class="ph"><span class="tagd">GIFT BOX</span><div class="pack"><span class="pf fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span></div></div><div class="pb"><h4>The Reserve Gift Box – Selection</h4><div class="price">€140,00</div><a class="add" href="#">ADD TO CART</a></div></div>
+  </div>
+</div></section>
+
+<!-- TWO EDITORIAL FEATURE CARDS -->
+<section style="padding-top:0"><div class="wrap">
+  <div class="feat-grid">
+    <div class="feat"><div class="ic"><span class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span></div><div><div class="e">THE FINEST BOTTARGA</div><h3>What Makes Our Bottarga the Best?</h3><a href="#">READ MORE →</a></div></div>
+    <div class="feat"><div class="ic"><span class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span></div><div><div class="e">HOW DOES IT WORK</div><h3>How to Order Our Products</h3><a href="#">READ MORE →</a></div></div>
+  </div>
+</div></section>
+
+<!-- HOW WE CURE -->
+<section class="cure"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The Artisanal Process</span><div class="gline"></div><h2>How We Cure Our Bottarga</h2><p>Discover the artisanal process behind our authentic Aegean bottarga.</p></div>
+  <div class="steps">
+    <div class="step"><div class="n">i</div><h4>Wild Harvest</h4><p>Grey-mullet roe from open Aegean waters, in season only.</p></div>
+    <div class="step"><div class="n">ii</div><h4>Hand-Salted</h4><p>Cured by hand in pure sea salt — nothing else added.</p></div>
+    <div class="step"><div class="n">iii</div><h4>Sun-Dried</h4><p>Slowly dried under the Aegean sun until amber and firm.</p></div>
+    <div class="step"><div class="n">iv</div><h4>Sealed</h4><p>Wax- or vacuum-sealed at the peak of its flavor.</p></div>
+  </div>
+</div></section>
+
+<!-- ABOUT ORIGIN -->
+<section class="origin"><div class="wrap row">
+  <div class="frame"><div class="pack"><span class="pf fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span><span class="pn">AEGEA</span></div></div>
+  <div><span class="eyebrow">From the Turkish Coast</span><h2>About the Aegean</h2><p>Along Turkey's Aegean shore, warm currents and clean waters have made grey-mullet roe a prized delicacy for centuries. It is here that AEGEA RESERVE begins — with wild fish, sea salt, and the patience of sun and wind.</p><p>Every piece is traceable, wild, and cured the traditional way, so the flavor of the Aegean reaches your table exactly as it should.</p><a class="btn" href="#" style="margin-top:14px">Learn More</a></div>
+</div></section>
+
+<!-- TESTIMONIALS -->
+<section style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">The Chef's Table</span><div class="gline"></div><h2>Trusted by Gourmets</h2></div>
+  <div class="testi-grid">
+    <div class="testi"><div class="stars">★★★★★</div><p>“The finest bottarga I've served outside of Sardinia. It shaves like a dream and the umami is extraordinary.”</p><div class="who"><span class="av">MR</span><span><span class="nm">Marco Rinaldi</span><br><span class="rl">Chef · One Michelin Star</span></span></div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>“Consistent, clean and beautifully packaged. AEGEA RESERVE has become a staple in our pantry.”</p><div class="who"><span class="av">EK</span><span><span class="nm">Elena Kaya</span><br><span class="rl">Fine-Food Retailer</span></span></div></div>
+    <div class="testi"><div class="stars">★★★★★</div><p>“Grated over fresh pasta with olive oil — nothing more needed. Guests always ask where it's from.”</p><div class="who"><span class="av">JD</span><span><span class="nm">Julien Dupont</span><br><span class="rl">Restaurant Owner</span></span></div></div>
+  </div>
+</div></section>
+
+<!-- NEWSLETTER -->
+<section class="news"><div class="wrap">
+  <span class="eyebrow">Stay in the Reserve</span>
+  <h2 style="margin-top:14px">Recipes, Offers &amp; New Arrivals</h2>
+  <p>Join our list for seasonal releases and gourmet inspiration.</p>
+  <form onsubmit="return false"><input type="email" placeholder="Your email address"><button class="btn solid" type="submit">Subscribe</button></form>
+</div></section>
+
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <div class="fcols">
+    <div class="fcol fbrand">
+      <span class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><use href="#fish"/></svg></span>
+      <div class="bt">AEGEA RESERVE</div><div class="bs">BOTTARGA</div>
+      <p>Premium Aegean grey-mullet bottarga — wild, hand-cured, sun-dried.</p>
+      <p style="color:var(--gold2)">Product of Turkey</p>
+    </div>
+    <div class="fcol"><h5>Navigation</h5><a href="#">Home</a><a href="#">Shop</a><a href="#">About</a><a href="#">Blog</a><a href="#">Contact</a></div>
+    <div class="fcol"><h5>Help Center</h5><a href="#">Returns</a><a href="#">Shipping</a><a href="#">Payments</a><a href="#">Reset Password</a><a href="#">FAQ</a></div>
+    <div class="fcol"><h5>Contact Us</h5><p>+90 232 000 00 00</p><p>contact@ornek-gurme.com</p><p>Aegean Coast, İzmir, Türkiye</p><p style="margin-top:12px;color:var(--gold2)">Keep Refrigerated</p></div>
+  </div>
+  <div class="fbot"><span>© 2026 AEGEA RESERVE · ALL RIGHTS RESERVED</span><span>EN · FR · IT · ES · GR</span></div>
+</div></footer>
+
+</body>
+</html>

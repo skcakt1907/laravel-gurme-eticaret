@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AEGEA RESERVE — 09 Modern</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0b0c;--card:#141416;--gold:#c8a355;--gold2:#e9d199;--cream:#edeae4;--mut:#8b887f}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--cream);font-family:'Manrope',sans-serif;font-weight:300;font-size:16px;line-height:1.7}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 40px}
+header{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(11,11,12,.7);border-bottom:1px solid rgba(200,163,85,.16)}
+.hrow{display:flex;justify-content:space-between;align-items:center;padding:18px 0;max-width:1160px;margin:0 auto;padding-left:40px;padding-right:40px}
+.brand{font-family:'Fraunces';font-weight:600;letter-spacing:.1em;font-size:18px;color:var(--gold2)}
+nav a{font-size:14px;letter-spacing:.02em;margin-left:28px;color:var(--mut)}
+nav a:hover{color:var(--cream)}
+.bag{border:1px solid rgba(200,163,85,.5);color:var(--gold2);padding:8px 18px;border-radius:30px;font-size:13px}
+/* hero split modern */
+.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:50px;padding:80px 0 70px}
+.hero .k{display:inline-block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,163,85,.4);padding:7px 16px;border-radius:30px;margin-bottom:26px}
+.hero h1{font-family:'Fraunces';font-weight:600;font-size:clamp(2.4rem,5vw,4rem);line-height:1.03;letter-spacing:-.01em;color:var(--cream)}
+.hero h1 span{color:var(--gold2)}
+.hero p{margin-top:22px;max-width:440px;color:#c3bdb1;font-size:1.05rem}
+.hero .row{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{background:var(--gold);color:#0b0b0c;font-weight:500;padding:15px 30px;border-radius:40px;font-size:14px;letter-spacing:.02em}
+.btn:hover{background:var(--gold2)}
+.btn.ghost{background:transparent;border:1px solid rgba(200,163,85,.5);color:var(--gold2)}
+.hero .stats{margin-top:40px;display:flex;gap:38px}
+.hero .stats .n{font-family:'Fraunces';font-weight:600;font-size:1.5rem;color:var(--cream)}
+.hero .stats .c{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.1em}
+.hero .visual{aspect-ratio:1;border-radius:24px;background:radial-gradient(circle at 60% 35%,#1c1811,#0b0b0c);border:1px solid rgba(200,163,85,.24);display:flex;align-items:center;justify-content:center}
+.hero .visual .frame{width:62%;aspect-ratio:3/4;border:1px solid var(--gold);border-radius:6px;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.hero .visual .frame::after{content:"";position:absolute;inset:8px;border:1px solid rgba(200,163,85,.4);border-radius:3px}
+.hero .visual .fi{width:56px;color:var(--gold)}
+.hero .visual .fl{font-family:'Fraunces';font-weight:600;letter-spacing:.12em;color:var(--gold2)}
+.hero .visual .fs{font-size:10px;letter-spacing:.24em;color:var(--mut)}
+/* product row modern cards */
+.sec{padding:60px 0 90px}
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:34px}
+.sec-h h2{font-family:'Fraunces';font-weight:600;font-size:2rem}
+.sec-h a{color:var(--gold2);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.p{background:var(--card);border:1px solid rgba(200,163,85,.16);border-radius:20px;padding:26px;transition:.3s}
+.p:hover{border-color:rgba(200,163,85,.5);transform:translateY(-4px)}
+.p .thumb{aspect-ratio:4/3;border-radius:12px;background:radial-gradient(circle at 50% 40%,#1a160f,#0f0e0c);display:flex;align-items:center;justify-content:center;margin-bottom:20px;border:1px solid rgba(200,163,85,.18)}
+.p .thumb .card{width:64px;height:82px;border:1px solid var(--gold);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.p .thumb .card::after{content:"";position:absolute;inset:4px;border:1px solid rgba(200,163,85,.4)}
+.p .thumb .fi{width:26px;color:var(--gold)}
+.p .thumb small{font-size:6px;letter-spacing:.2em;color:var(--gold2)}
+.p .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.p h3{font-family:'Fraunces';font-weight:600;font-size:1.25rem;margin:6px 0 4px}
+.p .fmt{color:var(--mut);font-size:14px}
+.p .foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.p .price{font-family:'Fraunces';font-weight:600;font-size:1.3rem;color:var(--gold2)}
+.p .add{background:rgba(200,163,85,.12);color:var(--gold2);border:1px solid rgba(200,163,85,.4);padding:9px 18px;border-radius:30px;font-size:13px}
+.p .add:hover{background:var(--gold);color:#0b0b0c}
+/* feature band */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:30px 0 80px}
+.feat .f{border-top:1px solid rgba(200,163,85,.3);padding-top:20px}
+.feat .f .fi{width:30px;color:var(--gold);margin-bottom:12px}
+.feat .f h4{font-family:'Fraunces';font-weight:600;font-size:1.1rem;color:var(--cream)}
+.feat .f p{color:var(--mut);font-size:14px;margin-top:4px}
+footer{border-top:1px solid rgba(200,163,85,.16);padding:44px 0;text-align:center}
+footer .brand{display:block;margin-bottom:8px}
+footer small{color:var(--mut);font-size:13px;letter-spacing:.06em}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.feat{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="hrow">
+  <div class="brand">AEGEA RESERVE</div>
+  <nav><a href="#">Shop</a><a href="#">Our Story</a><a href="#">Recipes</a><a class="bag" href="#">Bag · 0</a></nav>
+</div></header>
+
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <span class="k">Aegean Selection · Bottarga</span>
+      <h1>The Mediterranean's<br><span>edible gold,</span> delivered.</h1>
+      <p>Wild grey-mullet roe, hand-cured and sun-dried on the Aegean coast. Grate it, shave it, savour it.</p>
+      <div class="row"><a class="btn" href="#">Shop the Reserve</a><a class="btn ghost" href="#">How it's cured</a></div>
+      <div class="stats"><div><div class="n">100%</div><div class="c">Wild-caught</div></div><div><div class="n">0</div><div class="c">Additives</div></div><div><div class="n">€24+</div><div class="c">From</div></div></div>
+    </div>
+    <div class="visual"><div class="frame"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0b0b0c"/></svg></div><div class="fl">AEGEA RESERVE</div><div class="fs">BOTTARGA</div></div></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><h2>The Selection</h2><a href="#">View all →</a></div>
+    <div class="grid">
+      <div class="p"><div class="thumb"><div class="card"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0f0e0c"/></svg></div><small>GRATED</small></div></div><div class="tag">Grated</div><h3>Finely Grated</h3><div class="fmt">50g · glass jar</div><div class="foot"><span class="price">€24</span><a class="add" href="#">Add</a></div></div>
+      <div class="p"><div class="thumb"><div class="card"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0f0e0c"/></svg></div><small>WHOLE</small></div></div><div class="tag">Whole</div><h3>Wax-Sealed Whole</h3><div class="fmt">120–160g · natural</div><div class="foot"><span class="price">€68</span><a class="add" href="#">Add</a></div></div>
+      <div class="p"><div class="thumb"><div class="card"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0f0e0c"/></svg></div><small>PIECES</small></div></div><div class="tag">Pieces</div><h3>Vacuum Pieces</h3><div class="fmt">200g · sliceable</div><div class="foot"><span class="price">€96</span><a class="add" href="#">Add</a></div></div>
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="f"><div class="fi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7 6 6 10 12 22 18 10 17 6 12 2z"/></svg></div><h4>Wild-Caught</h4><p>Grey-mullet roe from open Aegean waters, in season only.</p></div>
+    <div class="f"><div class="fi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.5 7H22l-6 4.5L18.5 22 12 17.5 5.5 22 8 13.5 2 9h7.5z"/></svg></div><h4>Hand-Cured</h4><p>Salted and pressed by hand — no shortcuts, no additives.</p></div>
+    <div class="f"><div class="fi"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3M4 4l2 2M18 18l2 2M20 4l-2 2M6 18l-2 2" stroke="currentColor" stroke-width="1.6"/></svg></div><h4>Sun-Dried</h4><p>Cured under the Aegean sun until amber and firm.</p></div>
+  </section>
+</div>
+
+<footer>
+  <span class="brand" style="font-family:'Fraunces';font-weight:600;color:var(--gold2)">AEGEA RESERVE</span>
+  <small>Premium Aegean Bottarga · Product of Turkey · Keep refrigerated</small>
+</footer>
+</body>
+</html>

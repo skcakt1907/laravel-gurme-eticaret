@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AEGEA RESERVE — 03 Split</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--panel:#100e0b;--gold:#c9a24a;--gold2:#e7cd86;--cream:#efe6d2;--mut:#8c8577}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.7}
+a{text-decoration:none;color:inherit}
+.layout{display:flex;min-height:100vh}
+/* left fixed */
+.left{width:42%;position:fixed;top:0;left:0;height:100vh;background:var(--panel);border-right:1px solid rgba(201,162,74,.28);display:flex;flex-direction:column;justify-content:space-between;padding:48px 54px}
+.left::before{content:"";position:absolute;inset:20px;border:1px solid rgba(201,162,74,.18);pointer-events:none}
+.left .top .fi{width:74px;color:var(--gold);margin-bottom:34px}
+.left h1{font-family:'Cinzel';font-weight:500;font-size:clamp(2rem,3.4vw,3.4rem);letter-spacing:.14em;line-height:1.1;background:linear-gradient(180deg,#f4e6bd,#c9a24a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.left .bt{font-family:'Cinzel';letter-spacing:.5em;color:var(--gold);font-size:14px;margin-top:14px}
+.left .desc{margin-top:30px;color:#c9bfa7;max-width:340px;font-size:1.1rem}
+.left nav{display:flex;flex-direction:column;gap:16px;margin-top:40px}
+.left nav a{font-family:'Cinzel';font-size:12px;letter-spacing:.28em;color:var(--mut)}
+.left nav a:hover{color:var(--gold2)}
+.left .foot{font-family:'Cinzel';font-size:10px;letter-spacing:.24em;color:var(--mut)}
+/* right scroll */
+.right{margin-left:42%;width:58%;padding:70px 60px 90px}
+.sec-t{font-family:'Cinzel';letter-spacing:.34em;font-size:11px;color:var(--gold);margin-bottom:8px}
+.sec-h{font-family:'Cormorant Garamond';font-weight:600;font-size:2.2rem;color:var(--cream);margin-bottom:40px}
+.card{border:1px solid rgba(201,162,74,.28);padding:34px;display:flex;gap:30px;align-items:center;margin-bottom:22px;transition:.35s;background:linear-gradient(120deg,rgba(201,162,74,.03),transparent)}
+.card:hover{border-color:var(--gold);transform:translateX(6px)}
+.card .pk{width:96px;height:120px;flex-shrink:0;border:1px solid var(--gold);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px}
+.card .pk::after{content:"";position:absolute;inset:6px;border:1px solid rgba(201,162,74,.4)}
+.card .pk .fi{width:34px;color:var(--gold)}
+.card .pk small{font-family:'Cinzel';font-size:7px;letter-spacing:.24em;color:var(--gold2)}
+.card .info{flex:1}
+.card h3{font-family:'Cinzel';font-weight:500;letter-spacing:.08em;font-size:1.25rem}
+.card .fmt{color:var(--mut);font-style:italic;margin:4px 0 12px}
+.card .price{font-family:'Cinzel';color:var(--gold2);font-size:1.35rem}
+.card .add{font-family:'Cinzel';font-size:10px;letter-spacing:.28em;color:var(--gold);border:1px solid rgba(201,162,74,.5);padding:14px 20px;white-space:nowrap}
+.card .add:hover{background:var(--gold);color:#0a0a0a}
+.credo{margin-top:60px;padding:44px;border:1px solid rgba(201,162,74,.28);text-align:center}
+.credo .w{font-family:'Cinzel';letter-spacing:.3em;font-size:12px;color:var(--gold);display:flex;gap:28px;justify-content:center;flex-wrap:wrap}
+.credo p{margin-top:22px;font-style:italic;color:#c9bfa7}
+@media(max-width:900px){.left{position:relative;width:100%;height:auto}.right{margin-left:0;width:100%;padding:50px 26px}.layout{flex-direction:column}.card{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="left">
+    <div class="top">
+      <div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#100e0b"/></svg></div>
+      <h1>AEGEA<br>RESERVE</h1>
+      <div class="bt">BOTTARGA</div>
+      <p class="desc">Wild Aegean grey-mullet roe — hand-cured and sun-dried into edible gold.</p>
+      <nav><a href="#">THE SELECTION</a><a href="#">ORIGIN &amp; CURING</a><a href="#">CHEF'S TABLE</a><a href="#">CONTACT</a></nav>
+    </div>
+    <div class="foot">PRODUCT OF TURKEY · KEEP REFRIGERATED</div>
+  </aside>
+
+  <main class="right">
+    <div class="sec-t">THE SELECTION</div>
+    <div class="sec-h">Choose your format</div>
+
+    <div class="card"><div class="pk"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#100e0b"/></svg></div><small>GRATED</small></div><div class="info"><h3>Finely Grated</h3><div class="fmt">50g glass jar · finish any plate</div><div class="price">€24</div></div><a class="add" href="#">ADD</a></div>
+
+    <div class="card"><div class="pk"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#100e0b"/></svg></div><small>WHOLE</small></div><div class="info"><h3>Wax-Sealed Whole</h3><div class="fmt">120–160g · shave to order</div><div class="price">€68</div></div><a class="add" href="#">ADD</a></div>
+
+    <div class="card"><div class="pk"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#100e0b"/></svg></div><small>PIECES</small></div><div class="info"><h3>Vacuum Pieces</h3><div class="fmt">200g · kitchen format</div><div class="price">€96</div></div><a class="add" href="#">ADD</a></div>
+
+    <div class="credo">
+      <div class="w"><span>WILD</span><span>HAND-CURED</span><span>SUN-DRIED</span></div>
+      <p>“The Aegean, concentrated into a single amber ingredient.”</p>
+    </div>
+  </main>
+</div>
+</body>
+</html>

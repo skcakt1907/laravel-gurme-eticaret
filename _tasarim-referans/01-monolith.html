@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AEGEA RESERVE — 01 Monolith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--gold:#c9a24a;--gold2:#e7cd86;--cream:#efe6d2;--mut:#8c8577}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.gold{color:var(--gold2)}
+.cin{font-family:'Cinzel',serif}
+.emblem{display:inline-block;color:var(--gold);width:70px}
+.emblem svg{width:100%;display:block}
+/* top bar */
+header{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:26px 48px;z-index:20;mix-blend-mode:difference}
+header .brand{font-family:'Cinzel';letter-spacing:.32em;font-size:14px;color:#fff}
+nav a{font-family:'Cinzel';color:#fff;text-decoration:none;font-size:11px;letter-spacing:.28em;margin-left:34px;opacity:.85}
+nav a:hover{opacity:1}
+/* hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:0 24px}
+.hero::before{content:"";position:absolute;inset:38px;border:1px solid rgba(201,162,74,.35);pointer-events:none}
+.hero .fishwrap{width:96px;color:var(--gold);margin-bottom:30px}
+.hero h1{font-family:'Cinzel';font-weight:500;letter-spacing:.18em;font-size:clamp(2.4rem,7vw,5.4rem);line-height:1;color:transparent;background:linear-gradient(180deg,#f4e6bd,#c9a24a 60%,#9c7a2e);-webkit-background-clip:text;background-clip:text}
+.hero .sub{font-family:'Cinzel';letter-spacing:.55em;font-size:14px;margin:22px 0 8px;color:var(--gold)}
+.hero .rule{width:1px;height:60px;background:linear-gradient(var(--gold),transparent);margin:34px auto 0}
+.hero .tag{position:absolute;bottom:64px;font-family:'Cinzel';font-size:11px;letter-spacing:.4em;color:var(--mut)}
+/* selection */
+section{padding:120px 48px}
+.eyebrow{font-family:'Cinzel';letter-spacing:.4em;font-size:11px;color:var(--gold);text-align:center;display:block;margin-bottom:18px}
+.h2{font-family:'Cinzel';font-weight:400;text-align:center;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:.1em;color:var(--cream);margin-bottom:70px}
+.tiers{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(201,162,74,.28)}
+.tier{padding:54px 34px;text-align:center;border-right:1px solid rgba(201,162,74,.28);transition:.4s}
+.tier:last-child{border-right:none}
+.tier:hover{background:rgba(201,162,74,.05)}
+.pack{width:120px;height:150px;margin:0 auto 30px;border:1px solid var(--gold);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:linear-gradient(160deg,#141210,#0a0a0a)}
+.pack::after{content:"";position:absolute;inset:7px;border:1px solid rgba(201,162,74,.4)}
+.pack .fi{width:40px;color:var(--gold)}
+.pack small{font-family:'Cinzel';font-size:8px;letter-spacing:.28em;color:var(--gold2)}
+.tier h3{font-family:'Cinzel';font-weight:500;letter-spacing:.14em;font-size:1.2rem;color:var(--cream)}
+.tier .fmt{color:var(--mut);font-style:italic;margin:6px 0 16px}
+.tier .price{font-family:'Cinzel';color:var(--gold2);font-size:1.3rem}
+.tier a{display:inline-block;margin-top:22px;font-family:'Cinzel';font-size:10px;letter-spacing:.3em;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,162,74,.5);padding-bottom:5px}
+/* credo */
+.credo{background:#060606;text-align:center;border-top:1px solid rgba(201,162,74,.2);border-bottom:1px solid rgba(201,162,74,.2)}
+.credo .words{display:flex;justify-content:center;gap:44px;flex-wrap:wrap;font-family:'Cinzel';letter-spacing:.34em;font-size:13px;color:var(--gold)}
+.credo p{max-width:640px;margin:34px auto 0;color:var(--mut);font-size:1.15rem;font-style:italic}
+/* footer */
+footer{text-align:center;padding:70px 24px 46px}
+footer .emblem{width:56px;margin-bottom:16px}
+footer .fn{font-family:'Cinzel';letter-spacing:.3em;color:var(--cream);font-size:15px}
+footer small{display:block;color:var(--mut);letter-spacing:.2em;font-size:11px;margin-top:12px;font-family:'Cinzel'}
+@media(max-width:760px){.tiers{grid-template-columns:1fr}.tier{border-right:none;border-bottom:1px solid rgba(201,162,74,.28)}header{padding:18px 22px}nav a{margin-left:16px}section{padding:80px 22px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">AEGEA&nbsp;RESERVE</div>
+  <nav><a href="#">SHOP</a><a href="#">ORIGIN</a><a href="#">CONTACT</a></nav>
+</header>
+
+<div class="hero">
+  <div class="fishwrap"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0a0a0a"/></svg></div>
+  <h1>AEGEA RESERVE</h1>
+  <div class="sub">BOTTARGA</div>
+  <div class="rule"></div>
+  <div class="tag">WILD-CAUGHT · HAND-CURED · SUN-DRIED</div>
+</div>
+
+<section>
+  <span class="eyebrow">THE SELECTION</span>
+  <h2 class="h2">Three Ways to Savour the Aegean</h2>
+  <div class="tiers">
+    <div class="tier">
+      <div class="pack"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0a0a0a"/></svg></div><small>GRATED</small></div>
+      <h3>Finely Grated</h3>
+      <div class="fmt">50g · glass jar</div>
+      <div class="price">€24</div>
+      <a href="#">ADD TO BOX</a>
+    </div>
+    <div class="tier">
+      <div class="pack"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0a0a0a"/></svg></div><small>WHOLE</small></div>
+      <h3>Wax-Sealed Whole</h3>
+      <div class="fmt">120–160g · natural</div>
+      <div class="price">€68</div>
+      <a href="#">ADD TO BOX</a>
+    </div>
+    <div class="tier">
+      <div class="pack"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0a0a0a"/></svg></div><small>PIECES</small></div>
+      <h3>Vacuum Pieces</h3>
+      <div class="fmt">200g · sliceable</div>
+      <div class="price">€96</div>
+      <a href="#">ADD TO BOX</a>
+    </div>
+  </div>
+</section>
+
+<section class="credo">
+  <div class="words"><span>WILD</span><span>HAND-CURED</span><span>SUN-DRIED</span><span>AEGEAN</span></div>
+  <p>“A single roe, cured by salt, wind and patience — the Aegean concentrated into gold.”</p>
+</section>
+
+<footer>
+  <div class="emblem"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0a0a0a"/></svg></div>
+  <div class="fn">AEGEA RESERVE</div>
+  <small>PREMIUM AEGEAN BOTTARGA · PRODUCT OF TURKEY</small>
+</footer>
+</body>
+</html>

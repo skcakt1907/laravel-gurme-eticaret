@@ -1,0 +1,21 @@
+User-agent: *
+
+# Kullanıcıya özel ve işlem sayfaları — taranmasın.
+# DİKKAT: bu yollar rotalarla birebir aynı olmalı. Önceki sürümde başka bir
+# projeden kalma Türkçe yollar (/sepet, /odeme, /giris) yazılıydı; bu sitede
+# öyle adresler yok, gerçek yollar ise taramaya açık kalmıştı.
+Disallow: /yonetim
+Disallow: /account
+Disallow: /cart
+Disallow: /checkout
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /verify-email
+Disallow: /lang/
+
+Allow: /
+
+# Mutlak adres olmak ZORUNDA — göreli yazılırsa arama motorları yok sayar.
+Sitemap: https://ornek-gurme.com/sitemap.xml

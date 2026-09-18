@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AEGEA RESERVE — 04 Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0c0c;--gold:#bd9a4e;--gold2:#e3c986;--cream:#eae3d4;--mut:#7f7a6f}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--cream);font-family:'Jost',sans-serif;font-weight:300;font-size:17px;line-height:1.8}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 46px}
+header{padding:30px 0;display:flex;justify-content:space-between;align-items:center}
+.brand{font-family:'Marcellus';letter-spacing:.36em;font-size:17px;color:var(--gold2)}
+nav a{font-size:12px;letter-spacing:.3em;margin-left:34px;color:var(--mut);text-transform:uppercase}
+nav a:hover{color:var(--gold2)}
+/* hero — museum wall */
+.hero{text-align:center;padding:90px 0 70px}
+.hero .fi{width:60px;color:var(--gold);margin:0 auto 30px}
+.hero h1{font-family:'Marcellus';font-size:clamp(2.6rem,6vw,5rem);letter-spacing:.06em;color:var(--cream);line-height:1.05}
+.hero .sub{letter-spacing:.6em;font-size:13px;color:var(--gold);margin-top:20px;text-transform:uppercase}
+.hero .line{width:130px;height:1px;background:var(--gold);margin:32px auto}
+.hero p{max-width:560px;margin:0 auto;color:#c5bca8}
+/* gallery grid of framed works */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:60px 46px;padding:40px 0 90px}
+.art{text-align:center}
+.art .frame{aspect-ratio:4/5;border:1px solid rgba(189,154,78,.4);padding:22px;display:flex;align-items:center;justify-content:center;position:relative;background:radial-gradient(circle at 50% 42%,#16130f,#0c0c0c);transition:.4s}
+.art:hover .frame{border-color:var(--gold);box-shadow:0 0 0 1px rgba(189,154,78,.25),0 30px 60px -30px rgba(189,154,78,.4)}
+.art .inner{border:1px solid rgba(189,154,78,.35);width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.art .inner .fi{width:52px;color:var(--gold)}
+.art .inner .nm{font-family:'Marcellus';letter-spacing:.24em;color:var(--gold2);font-size:12px}
+.art .inner .bt{letter-spacing:.28em;font-size:8px;color:var(--mut)}
+/* museum label */
+.art .label{margin-top:20px}
+.art .label h3{font-family:'Marcellus';font-size:1.2rem;letter-spacing:.04em;color:var(--cream)}
+.art .label .meta{font-size:13px;letter-spacing:.08em;color:var(--mut);margin:4px 0 10px;font-style:italic}
+.art .label .price{font-family:'Marcellus';color:var(--gold2);letter-spacing:.1em}
+.art .label a{display:inline-block;margin-top:14px;font-size:10px;letter-spacing:.3em;color:var(--gold);border-bottom:1px solid rgba(189,154,78,.5);padding-bottom:4px;text-transform:uppercase}
+/* provenance band */
+.prov{border-top:1px solid rgba(189,154,78,.25);border-bottom:1px solid rgba(189,154,78,.25);padding:70px 0;text-align:center}
+.prov .t{font-family:'Marcellus';letter-spacing:.3em;font-size:12px;color:var(--gold);margin-bottom:22px}
+.prov .row{display:flex;justify-content:center;gap:60px;flex-wrap:wrap}
+.prov .row div{max-width:220px}
+.prov .row .n{font-family:'Marcellus';font-size:1.7rem;color:var(--gold2)}
+.prov .row .c{font-size:13px;letter-spacing:.12em;color:var(--mut);text-transform:uppercase;margin-top:6px}
+footer{padding:60px 0;text-align:center}
+footer .brand{display:block;margin-bottom:12px}
+footer small{color:var(--mut);letter-spacing:.24em;font-size:11px;text-transform:uppercase}
+@media(max-width:860px){.gal{grid-template-columns:1fr 1fr;gap:40px 30px}nav{display:none}}
+@media(max-width:560px){.gal{grid-template-columns:1fr}.wrap{padding:0 24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">AEGEA RESERVE</div>
+    <nav><a href="#">Collection</a><a href="#">Provenance</a><a href="#">Contact</a></nav>
+  </header>
+
+  <section class="hero">
+    <div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0c0c0c"/></svg></div>
+    <h1>The Bottarga Collection</h1>
+    <div class="sub">Aegean Selection</div>
+    <div class="line"></div>
+    <p>A curated cabinet of wild grey-mullet roe — each piece hand-cured, sun-dried, and presented like a work of art.</p>
+  </section>
+
+  <section class="gal">
+    <div class="art"><div class="frame"><div class="inner"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0c0c0c"/></svg></div><div class="nm">AEGEA</div><div class="bt">GRATED</div></div></div><div class="label"><h3>Finely Grated</h3><div class="meta">50g · glass jar</div><div class="price">€24</div><br><a href="#">Acquire</a></div></div>
+    <div class="art"><div class="frame"><div class="inner"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0c0c0c"/></svg></div><div class="nm">AEGEA</div><div class="bt">WHOLE</div></div></div><div class="label"><h3>Wax-Sealed Whole</h3><div class="meta">120–160g · natural</div><div class="price">€68</div><br><a href="#">Acquire</a></div></div>
+    <div class="art"><div class="frame"><div class="inner"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0c0c0c"/></svg></div><div class="nm">AEGEA</div><div class="bt">PIECES</div></div></div><div class="label"><h3>Vacuum Pieces</h3><div class="meta">200g · sliceable</div><div class="price">€96</div><br><a href="#">Acquire</a></div></div>
+  </section>
+
+  <section class="prov">
+    <div class="t">PROVENANCE</div>
+    <div class="row">
+      <div><div class="n">Wild</div><div class="c">Grey-mullet roe</div></div>
+      <div><div class="n">Hand-Cured</div><div class="c">Sea salt only</div></div>
+      <div><div class="n">Sun-Dried</div><div class="c">Aegean wind</div></div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="brand">AEGEA RESERVE</span>
+    <small>Premium Aegean Bottarga · Product of Turkey</small>
+  </footer>
+</div>
+</body>
+</html>

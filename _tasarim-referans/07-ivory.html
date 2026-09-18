@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AEGEA RESERVE — 07 Ivory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4efe4;--panel:#eae2d2;--ink:#1c1712;--gold:#a9812f;--gold2:#c69a3c;--mut:#8a7f6c}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.7}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 44px}
+header{display:flex;justify-content:space-between;align-items:center;padding:28px 0;border-bottom:1px solid rgba(169,129,47,.3)}
+.brand{font-family:'Cinzel';font-weight:600;letter-spacing:.26em;font-size:17px;color:var(--ink)}
+nav a{font-family:'Cinzel';font-size:11px;letter-spacing:.24em;margin-left:30px;color:var(--mut)}
+nav a:hover{color:var(--gold)}
+/* hero */
+.hero{text-align:center;padding:90px 0 60px}
+.hero .fi{width:64px;color:var(--gold);margin:0 auto 28px}
+.hero .k{font-family:'Cinzel';letter-spacing:.44em;font-size:11px;color:var(--gold);margin-bottom:22px}
+.hero h1{font-family:'Cormorant Garamond';font-weight:600;font-size:clamp(2.8rem,6vw,5.2rem);line-height:1.02;letter-spacing:.01em}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{max-width:540px;margin:26px auto 0;color:#5c5344}
+.hero .cta{margin-top:36px;display:inline-block;background:var(--ink);color:#f4efe4;font-family:'Cinzel';font-size:11px;letter-spacing:.28em;padding:16px 36px}
+.hero .cta:hover{background:var(--gold)}
+/* selection cards on ivory */
+.sel{padding:40px 0 100px}
+.sh{text-align:center;margin-bottom:56px}
+.sh .e{font-family:'Cinzel';letter-spacing:.4em;font-size:11px;color:var(--gold)}
+.sh h2{font-family:'Cormorant Garamond';font-weight:600;font-size:2.6rem;margin-top:10px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.c{background:var(--panel);border:1px solid rgba(169,129,47,.32);padding:44px 30px;text-align:center;transition:.35s}
+.c:hover{box-shadow:0 26px 50px -30px rgba(28,23,18,.45);transform:translateY(-5px)}
+.c .pk{width:120px;height:150px;margin:0 auto 28px;background:#141210;border:1px solid var(--gold);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.c .pk::after{content:"";position:absolute;inset:7px;border:1px solid rgba(198,154,60,.5)}
+.c .pk .fi{width:40px;color:var(--gold)}
+.c .pk small{font-family:'Cinzel';font-size:8px;letter-spacing:.26em;color:#e6cd88}
+.c h3{font-family:'Cormorant Garamond';font-weight:600;font-size:1.5rem}
+.c .fmt{color:var(--mut);font-style:italic;margin:4px 0 14px}
+.c .price{font-family:'Cinzel';color:var(--gold);font-size:1.3rem}
+.c a{display:inline-block;margin-top:22px;font-family:'Cinzel';font-size:10px;letter-spacing:.3em;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:5px}
+/* credo band dark inset */
+.band{background:var(--ink);color:#efe6d2;text-align:center;padding:74px 24px}
+.band .w{font-family:'Cinzel';letter-spacing:.34em;font-size:13px;color:#e6cd88;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.band p{max-width:640px;margin:26px auto 0;font-style:italic;color:#d8cbaf;font-size:1.25rem}
+footer{text-align:center;padding:54px 0}
+footer .brand{display:block;margin-bottom:10px}
+footer small{color:var(--mut);font-family:'Cinzel';letter-spacing:.22em;font-size:11px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">AEGEA RESERVE</div>
+    <nav><a href="#">THE ROE</a><a href="#">ORIGIN</a><a href="#">RECIPES</a><a href="#">SHOP</a></nav>
+  </header>
+
+  <section class="hero">
+    <div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#f4efe4"/></svg></div>
+    <div class="k">AEGEAN SELECTION · BOTTARGA</div>
+    <h1>The Warm <em>Amber</em><br>of the Aegean.</h1>
+    <p>Wild grey-mullet roe, cured by hand in sea salt and dried under the open sun. Timeless, unhurried, and utterly pure.</p>
+    <a class="cta" href="#">SHOP THE RESERVE</a>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="sel">
+    <div class="sh"><div class="e">THE SELECTION</div><h2>Three Formats, One Roe</h2></div>
+    <div class="grid">
+      <div class="c"><div class="pk"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#141210"/></svg></div><small>GRATED</small></div><h3>Finely Grated</h3><div class="fmt">50g · glass jar</div><div class="price">€24</div><br><a href="#">ADD TO BOX</a></div>
+      <div class="c"><div class="pk"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#141210"/></svg></div><small>WHOLE</small></div><h3>Wax-Sealed Whole</h3><div class="fmt">120–160g · natural</div><div class="price">€68</div><br><a href="#">ADD TO BOX</a></div>
+      <div class="c"><div class="pk"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#141210"/></svg></div><small>PIECES</small></div><h3>Vacuum Pieces</h3><div class="fmt">200g · sliceable</div><div class="price">€96</div><br><a href="#">ADD TO BOX</a></div>
+    </div>
+  </section>
+</div>
+
+<section class="band">
+  <div class="w"><span>WILD</span><span>HAND-CURED</span><span>SUN-DRIED</span></div>
+  <p>“Salt, wind and patience — the Aegean, concentrated into gold.”</p>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span class="brand">AEGEA RESERVE</span>
+    <small>PREMIUM AEGEAN BOTTARGA · PRODUCT OF TURKEY</small>
+  </footer>
+</div>
+</body>
+</html>

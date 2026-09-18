@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AEGEA RESERVE — 06 Cinematic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Tenor+Sans&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060606;--gold:#c9a24a;--gold2:#ecd28a;--cream:#e9e1d1;--mut:#7d786d}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--cream);font-family:'Tenor Sans',sans-serif;font-size:17px;line-height:1.8}
+a{text-decoration:none;color:inherit}
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:30;display:flex;justify-content:space-between;align-items:center;padding:26px 46px}
+.brand{font-family:'Cinzel';letter-spacing:.34em;font-size:14px;color:var(--gold2)}
+nav a{letter-spacing:.28em;font-size:11px;margin-left:32px;color:#cfc8ba;text-transform:uppercase}
+nav a:hover{color:var(--gold2)}
+/* cinematic hero */
+.hero{height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero .bgfish{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:150vw;max-width:1500px;color:rgba(201,162,74,.06)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,transparent 30%,#060606 78%)}
+.hero .content{position:relative;z-index:2}
+.hero .over{letter-spacing:.6em;font-size:12px;color:var(--gold);margin-bottom:26px;font-family:'Cinzel'}
+.hero h1{font-family:'Cinzel';font-weight:500;font-size:clamp(2.6rem,8vw,6.4rem);letter-spacing:.1em;line-height:1;background:linear-gradient(180deg,#f6ecca,#c9a24a 55%,#8f6f2a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .tl{margin-top:26px;letter-spacing:.34em;font-size:13px;color:#cfc8ba;font-family:'Cinzel'}
+.hero .cta{margin-top:44px;display:inline-block;border:1px solid var(--gold);color:var(--gold2);padding:16px 40px;letter-spacing:.3em;font-size:12px;font-family:'Cinzel'}
+.hero .cta:hover{background:var(--gold);color:#060606}
+.scroll-h{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);letter-spacing:.4em;font-size:10px;color:var(--mut);z-index:2}
+/* horizontal product reel */
+.reel-sec{padding:100px 0 110px}
+.reel-head{text-align:center;margin-bottom:56px}
+.reel-head .e{font-family:'Cinzel';letter-spacing:.4em;font-size:11px;color:var(--gold)}
+.reel-head h2{font-family:'Cinzel';font-weight:400;font-size:2.4rem;letter-spacing:.08em;margin-top:12px}
+.reel{display:flex;gap:26px;overflow-x:auto;padding:10px 46px 30px;scroll-snap-type:x mandatory}
+.reel::-webkit-scrollbar{height:2px}.reel::-webkit-scrollbar-thumb{background:var(--gold)}
+.slide{flex:0 0 300px;scroll-snap-align:center;border:1px solid rgba(201,162,74,.28);padding:40px 30px;text-align:center;transition:.4s}
+.slide:hover{border-color:var(--gold);background:rgba(201,162,74,.04)}
+.slide .pk{width:110px;height:140px;margin:0 auto 26px;border:1px solid var(--gold);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.slide .pk::after{content:"";position:absolute;inset:6px;border:1px solid rgba(201,162,74,.4)}
+.slide .pk .fi{width:38px;color:var(--gold)}
+.slide .pk small{font-family:'Cinzel';font-size:7px;letter-spacing:.24em;color:var(--gold2)}
+.slide h3{font-family:'Cinzel';letter-spacing:.08em;font-size:1.15rem}
+.slide .fmt{color:var(--mut);font-size:14px;margin:6px 0 14px}
+.slide .price{font-family:'Cinzel';color:var(--gold2);font-size:1.3rem}
+.slide a{display:block;margin-top:20px;font-family:'Cinzel';font-size:10px;letter-spacing:.3em;color:var(--gold)}
+footer{text-align:center;padding:60px 0;border-top:1px solid rgba(201,162,74,.2)}
+footer .brand{display:block;margin-bottom:10px}
+footer small{color:var(--mut);letter-spacing:.24em;font-size:11px;text-transform:uppercase}
+@media(max-width:640px){header{padding:18px 22px}nav a{margin-left:14px}.reel{padding:10px 22px 30px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">AEGEA RESERVE</div>
+  <nav><a href="#">Reserve</a><a href="#">Origin</a><a href="#">Contact</a></nav>
+</header>
+
+<section class="hero">
+  <div class="bgfish"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#060606"/></svg></div>
+  <div class="content">
+    <div class="over">WILD · HAND-CURED · SUN-DRIED</div>
+    <h1>AEGEA RESERVE</h1>
+    <div class="tl">THE GOLD OF THE AEGEAN SEA</div>
+    <a class="cta" href="#">ENTER THE RESERVE</a>
+  </div>
+  <div class="scroll-h">SCROLL</div>
+</section>
+
+<section class="reel-sec">
+  <div class="reel-head"><div class="e">THE SELECTION</div><h2>Choose Your Cut</h2></div>
+  <div class="reel">
+    <div class="slide"><div class="pk"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#060606"/></svg></div><small>GRATED</small></div><h3>Finely Grated</h3><div class="fmt">50g · glass jar</div><div class="price">€24</div><a href="#">ADD TO BOX →</a></div>
+    <div class="slide"><div class="pk"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#060606"/></svg></div><small>WHOLE</small></div><h3>Wax-Sealed Whole</h3><div class="fmt">120–160g · natural</div><div class="price">€68</div><a href="#">ADD TO BOX →</a></div>
+    <div class="slide"><div class="pk"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#060606"/></svg></div><small>PIECES</small></div><h3>Vacuum Pieces</h3><div class="fmt">200g · sliceable</div><div class="price">€96</div><a href="#">ADD TO BOX →</a></div>
+    <div class="slide"><div class="pk"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#060606"/></svg></div><small>GIFT</small></div><h3>The Reserve Box</h3><div class="fmt">whole + 2 selections</div><div class="price">€140</div><a href="#">ADD TO BOX →</a></div>
+  </div>
+</section>
+
+<footer>
+  <span class="brand" style="font-family:'Cinzel';letter-spacing:.3em;color:var(--gold2)">AEGEA RESERVE</span>
+  <small>Premium Aegean Bottarga · Product of Turkey</small>
+</footer>
+</body>
+</html>

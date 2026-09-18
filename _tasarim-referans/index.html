@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AEGEA RESERVE — 10 Tasarım Şeması</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--card:#121212;--gold:#c9a24a;--gold2:#e7cd86;--cream:#eae2d2;--mut:#8b8578}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--cream);font-family:'Manrope',sans-serif;font-weight:300;font-size:16px}
+a{text-decoration:none;color:inherit}
+.top{text-align:center;padding:64px 24px 40px;border-bottom:1px solid rgba(201,162,74,.2)}
+.top .fi{width:60px;color:var(--gold);margin:0 auto 20px}
+.top h1{font-family:'Cinzel';font-weight:500;letter-spacing:.16em;font-size:clamp(1.8rem,4vw,2.8rem);background:linear-gradient(180deg,#f4e6bd,#c9a24a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.top .sub{font-family:'Cinzel';letter-spacing:.4em;font-size:12px;color:var(--gold);margin-top:14px}
+.top p{max-width:640px;margin:18px auto 0;color:var(--mut);line-height:1.7}
+.grid{max-width:1300px;margin:0 auto;padding:46px 30px 90px;display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:30px}
+.item{background:var(--card);border:1px solid rgba(201,162,74,.2);border-radius:14px;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
+.item:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 30px 60px -34px rgba(201,162,74,.5)}
+.frame{position:relative;height:300px;overflow:hidden;border-bottom:1px solid rgba(201,162,74,.2);background:#000}
+.frame iframe{position:absolute;top:0;left:0;width:1280px;height:1000px;border:0;transform:scale(.3125);transform-origin:top left;pointer-events:none}
+.frame .click{position:absolute;inset:0;z-index:2}
+.frame .num{position:absolute;top:12px;left:12px;z-index:3;font-family:'Cinzel';font-size:12px;letter-spacing:.2em;color:var(--gold2);background:rgba(0,0,0,.6);border:1px solid rgba(201,162,74,.4);padding:5px 12px;border-radius:20px}
+.meta{padding:20px 22px;display:flex;justify-content:space-between;align-items:center}
+.meta h3{font-family:'Cinzel';font-weight:500;letter-spacing:.06em;font-size:1.05rem;color:var(--cream)}
+.meta .tag{font-size:12px;color:var(--mut);margin-top:3px;letter-spacing:.04em}
+.meta .open{font-family:'Cinzel';font-size:10px;letter-spacing:.2em;color:var(--gold);border:1px solid rgba(201,162,74,.5);padding:9px 14px;border-radius:20px;white-space:nowrap}
+.meta .open:hover{background:var(--gold);color:#0a0a0a}
+footer{text-align:center;padding:40px 24px 60px;color:var(--mut);font-family:'Cinzel';letter-spacing:.2em;font-size:11px;border-top:1px solid rgba(201,162,74,.2)}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0a0a0a"/></svg></div>
+  <h1>AEGEA RESERVE</h1>
+  <div class="sub">10 TASARIM ŞEMASI</div>
+  <p>Aynı marka (siyah + altın, Ege bottarga'sı) için birbirinden farklı 10 ana sayfa konsepti. Bir kartın üzerine tıkla, tam sayfayı aç; beğendiğin şemayı söyle, onu Laravel sitesine giydirelim.</p>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<footer>AEGEA RESERVE · PREMIUM AEGEAN BOTTARGA · PRODUCT OF TURKEY</footer>
+
+<script>
+const designs = [
+  ['00-referans.html','★ Referans Şablon','bottarga-shop.com düzeninin birebir uyarlaması'],
+  ['01-monolith.html','Monolith','Tam ekran, ultra-minimal, çerçeveli'],
+  ['02-editorial.html','Editorial','Dergi düzeni, asimetrik, drop-cap'],
+  ['03-split.html','Split Screen','Sabit sol panel + kayan içerik'],
+  ['04-gallery.html','Gallery','Müze/sanat galerisi, çerçeveli eserler'],
+  ['05-bento.html','Bento Grid','Modern kutu-ızgara, DTC hissi'],
+  ['06-cinematic.html','Cinematic','Sinematik hero + yatay ürün şeridi'],
+  ['07-ivory.html','Ivory','Açık krem zemin, siyah+altın (ters)'],
+  ['08-emerald.html','Emerald & Gold','Zümrüt-deniz nüansı + altın'],
+  ['09-modern.html','Modern Sans','Çağdaş, temiz sans, büyük hero'],
+  ['10-deco.html','Art Deco','Süslü altın çerçeve, simetrik ornament'],
+];
+const g = document.getElementById('grid');
+designs.forEach(([file,name,tag],i)=>{
+  const n = String(i+1).padStart(2,'0');
+  g.insertAdjacentHTML('beforeend', `
+    <div class="item">
+      <div class="frame">
+        <span class="num">${n}</span>
+        <iframe src="${file}" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+        <a class="click" href="${file}" target="_blank" aria-label="${name}"></a>
+      </div>
+      <div class="meta">
+        <div><h3>${name}</h3><div class="tag">${tag}</div></div>
+        <a class="open" href="${file}" target="_blank">AÇ ↗</a>
+      </div>
+    </div>`);
+});
+</script>
+</body>
+</html>

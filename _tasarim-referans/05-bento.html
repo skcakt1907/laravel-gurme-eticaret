@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AEGEA RESERVE — 05 Bento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080807;--tile:#111110;--gold:#c6a052;--gold2:#e8ce8a;--cream:#ece5d6;--mut:#847e71}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--cream);font-family:'Outfit',sans-serif;font-weight:300;font-size:17px}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:26px 32px 70px}
+header{display:flex;justify-content:space-between;align-items:center;padding:8px 0 26px}
+.brand{font-family:'Fraunces';font-weight:600;letter-spacing:.14em;font-size:18px;color:var(--gold2)}
+nav a{font-size:13px;letter-spacing:.14em;margin-left:26px;color:var(--mut)}
+nav a:hover{color:var(--gold2)}
+.cart{border:1px solid rgba(198,160,82,.5);padding:9px 18px;border-radius:40px;color:var(--gold2);font-size:13px;letter-spacing:.1em}
+/* bento grid */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:16px}
+.b{border:1px solid rgba(198,160,82,.24);border-radius:18px;background:var(--tile);padding:26px;position:relative;overflow:hidden;transition:.35s;display:flex;flex-direction:column}
+.b:hover{border-color:var(--gold);transform:translateY(-4px)}
+.hero{grid-column:span 2;grid-row:span 2;background:radial-gradient(circle at 80% 20%,#1a160f,#0b0a08);justify-content:space-between}
+.hero .fi{width:56px;color:var(--gold)}
+.hero h1{font-family:'Fraunces';font-weight:600;font-size:clamp(2rem,3.6vw,3.2rem);line-height:1.02;color:var(--cream)}
+.hero h1 em{font-style:italic;color:var(--gold2)}
+.hero .sub{letter-spacing:.4em;font-size:11px;color:var(--gold);margin-top:14px}
+.hero .go{margin-top:18px;align-self:flex-start;border:1px solid var(--gold);color:var(--gold2);padding:12px 22px;border-radius:40px;font-size:12px;letter-spacing:.18em}
+.hero .go:hover{background:var(--gold);color:#0b0a08}
+.tall{grid-row:span 2}
+.tag{letter-spacing:.3em;font-size:10px;color:var(--gold);text-transform:uppercase}
+.pk{flex:1;display:flex;align-items:center;justify-content:center}
+.pk .card{width:78px;height:100px;border:1px solid var(--gold);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.pk .card::after{content:"";position:absolute;inset:5px;border:1px solid rgba(198,160,82,.4)}
+.pk .card .fi{width:30px;color:var(--gold)}
+.pk .card small{font-family:'Outfit';font-size:6px;letter-spacing:.2em;color:var(--gold2)}
+.b h3{font-family:'Fraunces';font-weight:600;font-size:1.15rem;color:var(--cream);margin-top:8px}
+.b .fmt{font-size:13px;color:var(--mut)}
+.b .price{font-family:'Fraunces';color:var(--gold2);font-size:1.2rem;margin-top:auto}
+.wide{grid-column:span 2;flex-direction:row;align-items:center;gap:20px;background:linear-gradient(120deg,#12100c,#0b0a08)}
+.wide .txt .q{font-family:'Fraunces';font-style:italic;font-size:1.15rem;color:#d7cbaf;line-height:1.4}
+.stat{align-items:flex-start;justify-content:center}
+.stat .n{font-family:'Fraunces';font-weight:600;font-size:2rem;color:var(--gold2)}
+.stat .c{font-size:12px;letter-spacing:.16em;color:var(--mut);text-transform:uppercase}
+footer{text-align:center;margin-top:40px;color:var(--mut);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+@media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr)}.hero{grid-column:span 2}.wide{grid-column:span 2}}
+@media(max-width:520px){.bento{grid-template-columns:1fr}.hero,.wide,.tall{grid-column:span 1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">AEGEA RESERVE</div>
+    <nav><a href="#">Shop</a><a href="#">Origin</a><a href="#">Recipes</a><a class="cart" href="#">Bag · 0</a></nav>
+  </header>
+
+  <div class="bento">
+    <div class="b hero">
+      <div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#0b0a08"/></svg></div>
+      <div><div class="sub">BOTTARGA · AEGEAN SELECTION</div><h1>Edible gold,<br><em>sun-dried</em> by the sea.</h1></div>
+      <a class="go" href="#">Explore the Reserve →</a>
+    </div>
+    <div class="b tall"><div class="tag">Grated</div><div class="pk"><div class="card"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#111110"/></svg></div><small>AEGEA</small></div></div><h3>Finely Grated</h3><div class="fmt">50g jar</div><div class="price">€24</div></div>
+    <div class="b tall"><div class="tag">Whole</div><div class="pk"><div class="card"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#111110"/></svg></div><small>AEGEA</small></div></div><h3>Wax-Sealed</h3><div class="fmt">120–160g</div><div class="price">€68</div></div>
+    <div class="b wide"><div class="pk" style="flex:0 0 auto"><div class="card"><div class="fi"><svg viewBox="0 0 96 36" fill="currentColor"><path d="M14 18 L0 7 Q7 18 0 29 Z"/><ellipse cx="52" cy="18" rx="38" ry="12"/><circle cx="80" cy="14" r="2.3" fill="#111110"/></svg></div><small>PIECES</small></div></div><div class="txt"><h3>Vacuum Pieces · 200g</h3><div class="fmt">Kitchen format, slice to order</div><div class="price">€96</div></div></div>
+    <div class="b stat"><div class="n">Wild</div><div class="c">Grey-mullet roe</div></div>
+    <div class="b wide"><div class="txt"><div class="q">“Salt, wind and patience — nothing else.”</div></div></div>
+    <div class="b stat"><div class="n">100%</div><div class="c">Natural · no additives</div></div>
+  </div>
+
+  <footer>AEGEA RESERVE · PREMIUM AEGEAN BOTTARGA · PRODUCT OF TURKEY</footer>
+</div>
+</body>
+</html>
